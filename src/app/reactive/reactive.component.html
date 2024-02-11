@@ -1,0 +1,49 @@
+<form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+    <h3 class="form-control">Personal Details</h3>
+    <div class = "form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="form-control" [formControl]="nameControl">
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" [formControl]="passwordControl">
+    </div>
+    <div class="form-group">
+        <label for="mail">E-mail id:</label>
+        <input type="mail" id="mail" name="mail" class="form-control" [formControl]="mailControl">
+    </div>
+   
+    <div class="form-group custom-radio">
+        <label for="gender"> Gender:</label>
+        <input id="male" type="radio" class="form-control" value="male" name="gender" [formControl]="genderControl">
+        <label class="custom-control-label" for="male">Male</label>
+     
+        <input id="female" type="radio" class="form-control" value="female" name="gender"[formControl]="genderControl">
+        <label class="custom-control-label" for="female">Female</label>
+    </div>
+    <div class="form-group">
+        <label for="phone">Contact#:</label>
+        <input type="text" id="phone" name="phone" class="form-control" [formControl]="phoneControl">        
+    </div>
+    <h3 class="form-control">Educational Qualification</h3>
+
+    <div class="form-group">
+        <label for="degree">Degree:</label>
+        <select name="degree" class="form-control" id="degree" 
+        [formControl]="degreeControl">
+              <option *ngFor="let degree of degrees; let i=index" [value]="degree" [id]='degree'
+              [selected]="person.degree===degree"  
+              >{{degrees[i]}}</option> 
+            </select>    
+    </div>
+    <div class="form-group">
+        <label for="engineering">Engineering:</label>
+        <select name="engineering" class="form-control" id="engineering" 
+        [formControl]="engineeringControl">
+              <option *ngFor="let engineering of engineerings; let i=index" [value]="engineering" [id]='engineering'
+              [selected]="person.engineering===engineering">{{engineerings[i]}}</option>
+            </select>    
+    </div>
+    <div class="form-group"><button type="submit" class="custom-button"> Enter </button>
+        </div>
+</form>

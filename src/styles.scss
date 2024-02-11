@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+form {
+    width: 600px;
+    border: 1px solid rgba(250, 160, 49, 0.547);
+    margin: 0 auto;
+    background-color: rgb(201, 242, 53);
+}
+
+h3{
+    display: flex;
+    margin: 10px auto;
+    justify-content: center;
+    color: red;
+    margin-bottom: 20px;
+ }
+.form-group{    
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+    &--custom-radio{
+        display: flex;
+        flex-direction: row;
+    }
+    input {
+        margin-left: 5px;
+    }
+    select {
+        margin-left: 5px;
+    }
+ 
+    .form-control{
+        display: flex;
+        justify-content: center;
+    }
+}
+

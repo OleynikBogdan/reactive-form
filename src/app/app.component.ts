@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'temp-drive';
+
+  constructor(private router: Router){}
+
+  goToTamplateForm(){
+    this.router.navigate(['tamplate']);
+  }
+  goToReactiveForm(){
+    this.router.navigate(['reactive']);
+  }
 }
